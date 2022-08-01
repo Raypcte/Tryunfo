@@ -10,10 +10,11 @@ class App extends React.Component {
     cardAttr2: '0',
     cardAttr3: '0',
     cardImage: '',
-    cardRare: '',
+    cardRare: 'normal',
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
+    cardList: [],
   };
 
   verificaCampos = () => {
@@ -68,7 +69,42 @@ class App extends React.Component {
     }, this.verificaCampos);
   };
 
-  onSaveButtonClick = () => {};
+  onSaveButtonClick = () => {
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardTrunfo,
+    } = this.state;
+    const carta = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    };
+
+    this.setState((anterior) => ({
+      cardList: [...anterior.cardList, carta],
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
+      hasTrunfo: false,
+      isSaveButtonDisabled: true,
+    }));
+  };
 
   render() {
     return (
