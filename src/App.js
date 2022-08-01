@@ -79,6 +79,7 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardTrunfo,
+      hasTrunfo,
     } = this.state;
     const carta = {
       cardName,
@@ -101,9 +102,12 @@ class App extends React.Component {
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
-      hasTrunfo: false,
       isSaveButtonDisabled: true,
-    }));
+    }), () => {
+      this.setState((anterior) => ({
+        hasTrunfo: anterior.cardList.some((card) => card.cardTrunfo === true),
+      }));
+    });
   };
 
   render() {
