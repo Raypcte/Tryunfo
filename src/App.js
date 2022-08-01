@@ -78,9 +78,7 @@ class App extends React.Component {
       cardAttr1,
       cardAttr2,
       cardAttr3,
-      cardTrunfo,
-      hasTrunfo,
-    } = this.state;
+      cardTrunfo } = this.state;
     const carta = {
       cardName,
       cardDescription,
@@ -111,6 +109,7 @@ class App extends React.Component {
   };
 
   render() {
+    const { cardList } = this.state;
     return (
       <div>
         <Form
@@ -119,6 +118,11 @@ class App extends React.Component {
           onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card { ...this.state } />
+        {
+          cardList.map((carta) => (
+            <Card { ...carta } key={ carta.cardName } />
+          ))
+        }
       </div>
     );
   }
