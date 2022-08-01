@@ -12,7 +12,7 @@ class Form extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      hasTrunfo,
+      // hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -27,6 +27,7 @@ class Form extends React.Component {
             id="name"
             value={ cardName }
             onChange={ onInputChange }
+            name="cardName"
           />
         </label>
 
@@ -37,6 +38,8 @@ class Form extends React.Component {
             id="description"
             value={ cardDescription }
             onChange={ onInputChange }
+            name="cardDescription"
+
           />
         </label>
 
@@ -48,6 +51,7 @@ class Form extends React.Component {
             id="attr01"
             value={ cardAttr1 }
             onChange={ onInputChange }
+            name="cardAttr1"
           />
         </label>
 
@@ -59,6 +63,7 @@ class Form extends React.Component {
             id="attr02"
             value={ cardAttr2 }
             onChange={ onInputChange }
+            name="cardAttr2"
           />
         </label>
 
@@ -70,6 +75,7 @@ class Form extends React.Component {
             id="attr03"
             value={ cardAttr3 }
             onChange={ onInputChange }
+            name="cardAttr3"
           />
         </label>
 
@@ -81,6 +87,7 @@ class Form extends React.Component {
             id="image"
             value={ cardImage }
             onChange={ onInputChange }
+            name="cardImage"
           />
         </label>
 
@@ -91,6 +98,7 @@ class Form extends React.Component {
             id="rare"
             value={ cardRare }
             onChange={ onInputChange }
+            name="cardRare"
           >
             <option value="normal">normal</option>
             <option value="raro" selected>
@@ -108,6 +116,7 @@ class Form extends React.Component {
             id="trunfo"
             checked={ cardTrunfo }
             onChange={ onInputChange }
+            name="cardTrunfo"
           />
         </label>
 
@@ -133,7 +142,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.bool.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  hasTrunfo: PropTypes.bool.isRequired,
+  // hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
